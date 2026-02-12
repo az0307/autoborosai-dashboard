@@ -37,17 +37,13 @@
   ],
   "redirects": [
     {
-      "source": "https://autoborosai.au/:path*",
-      "destination": "https://autoborosai.com.au/:path*",
-      "permanent": true
-    },
-    {
-      "source": "https://www.autoborosai.au/:path*",
-      "destination": "https://autoborosai.com.au/:path*",
-      "permanent": true
-    },
-    {
-      "source": "https://www.autoborosai.com.au/:path*",
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.autoborosai.com.au"
+        }
+      ],
       "destination": "https://autoborosai.com.au/:path*",
       "permanent": true
     }
