@@ -1,18 +1,20 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // GitHub Pages static export
-  output: 'export',
-
+  // Vercel optimized configuration
   images: {
-    unoptimized: true, // Required for static export
+    formats: ['image/webp', 'image/avif'],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920],
   },
-
-  basePath: '',
-  assetPrefix: '',
-  trailingSlash: true,
 
   experimental: {
     optimizeCss: true,
+    optimizePackageImports: [
+      'lucide-react',
+      'lodash',
+      'date-fns',
+      'recharts',
+      'framer-motion'
+    ]
   },
 
   env: {
