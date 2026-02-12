@@ -1,0 +1,61 @@
+{
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
+  "framework": "nextjs",
+  "regions": ["syd1"],
+  "env": {
+    "NEXT_PUBLIC_ENVIRONMENT": "production",
+    "NEXT_PUBLIC_DOMAIN": "autoborosai.com.au"
+  },
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "https://autoborosai.au/:path*",
+      "destination": "https://autoborosai.com.au/:path*",
+      "permanent": true
+    },
+    {
+      "source": "https://www.autoborosai.au/:path*",
+      "destination": "https://autoborosai.com.au/:path*",
+      "permanent": true
+    },
+    {
+      "source": "https://www.autoborosai.com.au/:path*",
+      "destination": "https://autoborosai.com.au/:path*",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://api.autoborosai.com.au/api/:path*"
+    }
+  ]
+}
