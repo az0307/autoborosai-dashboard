@@ -23,13 +23,16 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Local env files
+# Env files — never commit real values; use hosting platform secrets
 .env
 .env*.local
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
+.env.production
+.env.staging
+.env*.secret
 
 # Vercel
 .vercel
@@ -64,5 +67,3 @@ pnpm-lock.yaml
 
 # Git
 .git/index.lock
-
-.vercel
