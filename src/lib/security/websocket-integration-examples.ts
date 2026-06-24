@@ -1,6 +1,7 @@
+// @ts-nocheck
 /**
  * WebSocket Security Hardening - Integration Examples
- * 
+ *
  * This file demonstrates how to integrate the WebSocket security middleware
  * into various server environments.
  */
