@@ -22,8 +22,6 @@ const nextConfig = {
     NEXT_PUBLIC_WS_URL: process.env.NEXT_PUBLIC_WS_URL || 'wss://api.autoborosai.com.au',
     NEXT_PUBLIC_ENVIRONMENT: process.env.NEXT_PUBLIC_ENVIRONMENT || 'production',
     NEXT_PUBLIC_DOMAIN: 'autoborosai.com.au',
-    NEXT_PUBLIC_OWNER_NAME: 'BAKER, AARON JAMES REGINALD',
-    NEXT_PUBLIC_ABN: '15870917390',
   },
 
   transpilePackages: [],
