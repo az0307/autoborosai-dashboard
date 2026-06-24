@@ -45,6 +45,10 @@ export default function DashboardPage() {
           description: 'Advanced research and analysis agent',
           tags: ['research', 'analysis'],
           owner: 'system',
+          team: 'core',
+          department: 'operations',
+          certifications: [],
+          complianceFrameworks: [],
         },
         configuration: {
           maxConcurrentTasks: 5,
@@ -77,6 +81,10 @@ export default function DashboardPage() {
           description: 'Full-stack development assistant',
           tags: ['development', 'coding'],
           owner: 'system',
+          team: 'core',
+          department: 'engineering',
+          certifications: [],
+          complianceFrameworks: [],
         },
         configuration: {
           maxConcurrentTasks: 3,
@@ -109,6 +117,10 @@ export default function DashboardPage() {
           description: 'Customer support and communication agent',
           tags: ['support', 'communication'],
           owner: 'system',
+          team: 'core',
+          department: 'customer-success',
+          certifications: [],
+          complianceFrameworks: [],
         },
         configuration: {
           maxConcurrentTasks: 10,
