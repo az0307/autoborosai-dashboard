@@ -150,7 +150,7 @@ export class ApiClient {
   }
 
   // Batch requests
-  async batch<T>(requests: Array<{ endpoint: string; options?: RequestOptions }>): Promise<ApiResponse<T>[]> {
+  async batch<T>(requests: Array<{ endpoint: string; options?: RequestOptions }>): Promise<ApiResponse<ApiResponse<T>[]>> {
     const promises = requests.map(({ endpoint, options }) => this.request<T>(endpoint, options))
     
     try {
