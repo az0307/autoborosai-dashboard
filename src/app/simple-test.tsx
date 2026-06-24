@@ -3,8 +3,8 @@ export default function SimplePage() {
     <html>
       <head>
         <title>Nexus Dashboard Test</title>
-        <style>
-          body { 
+        <style dangerouslySetInnerHTML={{ __html: `
+          body {
             margin: 0;
             padding: 20px;
             font-family: Arial, sans-serif;
@@ -12,7 +12,7 @@ export default function SimplePage() {
             color: #ffffff;
           }
           h1 { color: #137fec; }
-        </style>
+        ` }} />
       </head>
       <body>
         <h1>🤖 Nexus Dashboard - Test Page</h1>
