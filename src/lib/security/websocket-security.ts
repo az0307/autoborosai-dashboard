@@ -428,7 +428,7 @@ export class WebSocketSecurityMiddleware implements SecurityMiddleware {
   /**
    * Generate unique connection ID
    */
-  private generateConnectionId(): string {
+  generateConnectionId(): string {
     return `ws_${Date.now()}_${Math.random().toString(36).substring(2, 11)}`
   }
 
