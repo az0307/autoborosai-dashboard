@@ -395,9 +395,6 @@ export class WebSocketSecurityMiddleware implements SecurityMiddleware {
     if (typeof origin === 'string') {
       return origin
     }
-    if (Array.isArray(origin) && origin.length > 0) {
-      return origin[0]
-    }
     return undefined
   }
 
@@ -405,13 +402,13 @@ export class WebSocketSecurityMiddleware implements SecurityMiddleware {
    * Extract IP address from request
    */
   private extractIp(request: WebSocketUpgradeRequest): string {
-    // Try various headers for IP address
     const forwarded = request.headers['x-forwarded-for']
     if (typeof forwarded === 'string') {
-      return forwarded.split(',')[0].trim()
+      return forwarded.split(',')[0]?.trim() ?? 'unknown'
     }
     if (Array.isArray(forwarded) && forwarded.length > 0) {
-      return forwarded[0].split(',')[0].trim()
+      const first = forwarded[0] ?? ''
+      return first.split(',')[0]?.trim() ?? 'unknown'
     }
 
     const realIp = request.headers['x-real-ip']
@@ -419,16 +416,16 @@ export class WebSocketSecurityMiddleware implements SecurityMiddleware {
       return realIp
     }
     if (Array.isArray(realIp) && realIp.length > 0) {
-      return realIp[0]
+      return realIp[0] ?? 'unknown'
     }
 
-    return request.socket.remoteAddress || 'unknown'
+    return request.socket.remoteAddress ?? 'unknown'
   }
 
   /**
    * Generate unique connection ID
    */
-  private generateConnectionId(): string {
+  generateConnectionId(): string {
     return `ws_${Date.now()}_${Math.random().toString(36).substring(2, 11)}`
   }
 

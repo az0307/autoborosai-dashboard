@@ -42,7 +42,7 @@ export class WebSocketRateLimiter {
     redis?: RedisClient
   ) {
     this.connectionConfig = { ...DEFAULT_CONNECTION_RATE_LIMIT, ...connectionConfig }
-    this.messageLimits = { ...DEFAULT_MESSAGE_RATE_LIMITS, ...messageLimits }
+    this.messageLimits = { ...DEFAULT_MESSAGE_RATE_LIMITS, ...messageLimits } as MessageRateLimits
     this.defaultLimit = { ...DEFAULT_RATE_LIMIT, ...defaultLimit }
     this.redis = redis
 
@@ -328,7 +328,8 @@ export class WebSocketRateLimiter {
   private cleanupMemoryStorage(): void {
     const now = Date.now()
     for (const key in this.memoryStorage) {
-      if (this.memoryStorage[key].resetTime <= now) {
+      const entry = this.memoryStorage[key]
+      if (entry && entry.resetTime <= now) {
         delete this.memoryStorage[key]
       }
     }

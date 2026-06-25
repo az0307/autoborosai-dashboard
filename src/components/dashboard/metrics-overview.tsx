@@ -77,7 +77,7 @@ export function MetricsOverview({ stats }: MetricsOverviewProps) {
     {
       title: 'Active Now',
       value: stats.activeAgents,
-      change: { value: 12, type: 'increase' },
+      change: { value: 12, type: 'increase' as const },
       icon: 'play_circle',
       color: 'success',
       description: 'Currently active'
@@ -85,7 +85,7 @@ export function MetricsOverview({ stats }: MetricsOverviewProps) {
     {
       title: 'Total Tasks',
       value: stats.totalTasks,
-      change: { value: 8, type: 'increase' },
+      change: { value: 8, type: 'increase' as const },
       icon: 'assignment',
       color: 'info',
       description: 'Tasks completed'
@@ -93,7 +93,7 @@ export function MetricsOverview({ stats }: MetricsOverviewProps) {
     {
       title: 'Success Rate',
       value: `${stats.averageSuccessRate.toFixed(1)}%`,
-      change: { value: 3.2, type: 'increase' },
+      change: { value: 3.2, type: 'increase' as const },
       icon: 'trending_up',
       color: 'warning',
       description: 'Average success rate'
@@ -101,7 +101,7 @@ export function MetricsOverview({ stats }: MetricsOverviewProps) {
     {
       title: 'Total Cost',
       value: `$${stats.totalCost.toFixed(2)}`,
-      change: { value: 5.1, type: 'decrease' },
+      change: { value: 5.1, type: 'decrease' as const },
       icon: 'payments',
       color: 'error',
       description: 'Operating costs'
@@ -109,7 +109,7 @@ export function MetricsOverview({ stats }: MetricsOverviewProps) {
     {
       title: 'System Health',
       value: '98.5%',
-      change: { value: 1.2, type: 'increase' },
+      change: { value: 1.2, type: 'increase' as const },
       icon: 'health_and_safety',
       color: 'success',
       description: 'Overall health score'
