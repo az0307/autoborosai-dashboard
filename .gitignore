@@ -1,3 +1,4 @@
+
 # Dependencies
 node_modules/
 /.pnp
@@ -67,3 +68,7 @@ pnpm-lock.yaml
 
 # Git
 .git/index.lock
+
+# Env files (secrets hygiene 2026-10-27)
+.env.*
+!.env.example
