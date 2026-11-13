@@ -25,5 +25,5 @@ A `vitest.config.ts` exists but there is no `test` script yet.
 ## Deploy
 
 - **Vercel** (`vercel.json`, region `syd1`, domain `autoborosai.com.au`) — Aurora's own project, not a client site.
-- `.github/workflows/deploy.yml` also builds for **GitHub Pages**; only one of these should be the real target.
+- **GitHub Pages is unfinished:** `.github/workflows/deploy.yml` uploads `./out`, but `next.config.js` does not enable static export, so the current build does not produce that artifact. Choose a deployment target and validate its output before relying on this workflow.
 - `.env.production` is a sanitized template — set real values as platform secrets, never in git.
