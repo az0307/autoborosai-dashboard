@@ -218,15 +218,15 @@ export default function DashboardPage() {
           marginBottom: '20px',
           fontSize: '20px'
         }}>
-          ✅ IMPLEMENTATION COMPLETE
+          DEMONSTRATION ONLY — NO LIVE TELEMETRY
         </h2>
         <div style={{ fontSize: '14px', lineHeight: '1.6', opacity: 0.8 }}>
-          <p><strong style={{ color: '#10b981' }}>Next.js 15 + TypeScript:</strong> ✅ Complete</p>
+          <p><strong style={{ color: '#10b981' }}>Next.js 15 + TypeScript:</strong> Demo UI only</p>
           <p><strong style={{ color: '#10b981' }}>FastAPI + WebSocket:</strong> ✅ Complete</p>
           <p><strong style={{ color: '#10b981' }}>Glass-Morphism Design:</strong> ✅ Complete</p>
           <p><strong style={{ color: '#10b981' }}>Agent Management:</strong> ✅ Complete</p>
           <p><strong style={{ color: '#f59e0b' }}>Frontend:</strong> Build errors, being fixed</p>
-          <p><strong style={{ color: '#10b981' }}>Backend:</strong> ✅ Running on port 8000</p>
+          <p><strong style={{ color: '#10b981' }}>Backend:</strong> Not verified from this frontend</p>
         </div>
       </div>
     </div>
