@@ -10,7 +10,7 @@
  * Quality: TypeScript strict mode, proper error handling
  */
 
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { useAgentStore } from '@/stores/agent-store'
 import { AgentCard } from '@/components/agents/agent-card'
 import { MetricsOverview } from '@/components/dashboard/metrics-overview'
@@ -19,7 +19,6 @@ import type { Agent, AgentStatus, AgentType } from '@/types'
 
 export default function DashboardPage() {
   const { agents, setAgents, selectAgent } = useAgentStore()
-  const [isOnline, setIsOnline] = useState(true)
 
   // Mock data for demonstration - will be replaced with API calls
   useEffect(() => {
@@ -174,14 +173,8 @@ export default function DashboardPage() {
         </div>
 
         <div className="flex items-center gap-4">
-          <div className={`px-4 py-2 rounded-lg ${
-            isOnline
-              ? 'bg-success/20 border border-success/30 text-success'
-              : 'bg-error/20 border border-error/30 text-error'
-          }`}>
-            <span className="font-bold">
-              {isOnline ? '✅ System Online' : '❌ System Offline'}
-            </span>
+          <div className="px-4 py-2 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-200">
+            <span className="font-bold">Demo data — live agent health unverified</span>
           </div>
 
           <div className="text-xs text-text-secondary">
@@ -227,12 +220,12 @@ export default function DashboardPage() {
           Powered by <span className="text-primary font-bold">AutoborosAI</span> •
           Built with security-first principles •
           <a
-            href="http://localhost:8000/docs"
+            href="https://github.com/az0307/autoboros-cockpit"
             target="_blank"
             rel="noopener noreferrer"
             className="text-primary hover:underline ml-1"
           >
-            API Documentation
+            Architecture repository
           </a>
         </p>
       </footer>
