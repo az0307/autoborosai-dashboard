@@ -1,7 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // GitHub Pages serves static files only; generate ./out during next build.
+  output: 'export',
   // Vercel optimized configuration
   images: {
+    // Image optimization requires a server, which GitHub Pages does not provide.
+    unoptimized: true,
     formats: ['image/webp', 'image/avif'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
   },
